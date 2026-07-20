@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   MessageSquare,
   Phone,
@@ -12,6 +13,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import { DemoModal } from "@/components/DemoModal";
 
 export const Route = createFileRoute("/")({
   head: () => ({

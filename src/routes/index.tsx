@@ -234,9 +234,10 @@ function Services() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {items.map(({ icon: Icon, title, desc }) => (
-            <div
+            <a
               key={title}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
+              href="#contact"
+              className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-wash text-brand-deep">
                 <Icon className="h-6 w-6" strokeWidth={2} />
@@ -246,7 +247,7 @@ function Services() {
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
                 See it in action <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
               </span>
-            </div>
+            </a>
           ))}
         </div>
       </div>

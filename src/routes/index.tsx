@@ -447,10 +447,10 @@ function CTA() {
             <Phone className="h-4 w-4" strokeWidth={2.5} /> Call +61 466 215 363
           </a>
           <a
-            href="mailto:hello@sariova.ai"
+            href="mailto:nirmal39127@gmail.com"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 font-display text-base font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06] sm:w-auto"
           >
-            <Mail className="h-4 w-4" strokeWidth={2.5} /> hello@sariova.ai
+            <Mail className="h-4 w-4" strokeWidth={2.5} /> nirmal39127@gmail.com
           </a>
         </div>
       </div>

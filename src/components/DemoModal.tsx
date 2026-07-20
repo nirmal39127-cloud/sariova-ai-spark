@@ -192,7 +192,7 @@ function ChatView({ industry, onBack }: { industry: Industry; onBack: () => void
           </button>
         </div>
         <p className="mt-2 text-center text-[11px] text-white/40">
-          Live demo · Powered by Sariova.AI
+          Live demo · Powered by Sariova AI
         </p>
       </form>
     </div>

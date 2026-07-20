@@ -25,10 +25,10 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Sariova.AI",
-          url: "https://sariova.ai/",
+          name: "Sariova AI",
+          url: "https://sariova.com.au/",
           telephone: "+61466215363",
-          email: "nirmal39127@gmail.com",
+          email: "info@sariova.com.au",
           founder: { "@type": "Person", name: "Nirmal Saria" },
           areaServed: { "@type": "City", name: "Melbourne" },
           address: {
@@ -82,7 +82,7 @@ function Nav() {
             <Sparkles className="h-5 w-5" strokeWidth={2.5} />
           </span>
           <span className="font-display text-[15px] font-extrabold tracking-tight">
-            Sariova<span className="text-brand">.AI</span>
+            Sariova <span className="text-brand">AI</span>
           </span>
         </a>
         <nav className="hidden items-center gap-1 md:flex">
@@ -129,8 +129,11 @@ function Hero() {
             Never miss a{" "}
             <span className="text-brand">customer</span> again.
           </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Sariova.AI builds assistants that answer every web chat, phone call
+          <p className="mt-4 font-display text-lg font-bold text-brand md:text-xl">
+            Where AI Meets Business Growth
+          </p>
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
+            Sariova AI builds assistants that answer every web chat, phone call
             and social DM for your business — 24 hours a day, 7 days a week.
             Like a staff member who never sleeps.
           </p>
@@ -327,7 +330,7 @@ function WhyUs() {
     {
       icon: Zap,
       title: "Answers in seconds",
-      desc: "80% of customers pick the first business that replies. Sariova.AI is always first.",
+      desc: "80% of customers pick the first business that replies. Sariova AI is always first.",
     },
     {
       icon: Clock,
@@ -404,7 +407,7 @@ function Founder() {
           </div>
           <p className="mt-6 text-[15px] leading-relaxed text-white/70 md:text-base">
             I've spent the last few years building AI assistants for cafés,
-            clinics, tradies and salons across Melbourne. Sariova.AI is the
+            clinics, tradies and salons across Melbourne. Sariova AI is the
             same practical, no-nonsense service — with the tooling and team to
             scale beyond Melbourne. When you sign up, I'm the person who builds,
             deploys and supports your assistant. No agency handoffs.
@@ -447,10 +450,10 @@ function CTA() {
             <Phone className="h-4 w-4" strokeWidth={2.5} /> Call +61 466 215 363
           </a>
           <a
-            href="mailto:nirmal39127@gmail.com"
+            href="mailto:info@sariova.com.au"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 font-display text-base font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06] sm:w-auto"
           >
-            <Mail className="h-4 w-4" strokeWidth={2.5} /> nirmal39127@gmail.com
+            <Mail className="h-4 w-4" strokeWidth={2.5} /> info@sariova.com.au
           </a>
         </div>
       </div>
@@ -468,11 +471,11 @@ function Footer() {
             <Sparkles className="h-4 w-4" strokeWidth={2.5} />
           </span>
           <span className="font-display text-sm font-extrabold">
-            Sariova<span className="text-brand">.AI</span>
+            Sariova <span className="text-brand">AI</span>
           </span>
         </div>
         <p className="text-xs text-white/50">
-          © {new Date().getFullYear()} Sariova.AI · AI Assistants for Local
+          © {new Date().getFullYear()} Sariova AI · AI Assistants for Local
           Business · Melbourne, Australia
         </p>
       </div>

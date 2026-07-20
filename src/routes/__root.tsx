@@ -77,16 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sariova.AI — AI Assistants for Local Business" },
+      { title: "Sariova AI — AI Assistants for Local Business" },
       {
         name: "description",
         content:
-          "Sariova.AI builds AI web chat, phone receptionist and social DM assistants for local businesses. Never miss a customer message again.",
+          "Sariova AI builds AI web chat, phone receptionist and social DM assistants for local businesses. Never miss a customer message again.",
       },
-      { name: "author", content: "Sariova.AI" },
+      { name: "author", content: "Sariova AI" },
       { name: "theme-color", content: "#0a151c" },
-      { property: "og:site_name", content: "Sariova.AI" },
-      { property: "og:title", content: "Sariova.AI — AI Assistants for Local Business" },
+      { property: "og:site_name", content: "Sariova AI" },
+      { property: "og:title", content: "Sariova AI — AI Assistants for Local Business" },
       {
         property: "og:description",
         content:
@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Sariova.AI — AI Assistants for Local Business" },
+      { name: "twitter:title", content: "Sariova AI — AI Assistants for Local Business" },
       {
         name: "twitter:description",
         content: "AI receptionists that answer every customer 24/7 for local businesses.",

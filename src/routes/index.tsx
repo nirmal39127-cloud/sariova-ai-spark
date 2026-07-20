@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   MessageSquare,
   Phone,
@@ -51,11 +51,11 @@ const openDemo = () => window.dispatchEvent(new Event(OPEN_DEMO_EVENT));
 
 function Home() {
   const [demoOpen, setDemoOpen] = useState(false);
-  if (typeof window !== "undefined") {
-    // register once via effect below
-  }
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useDemoTrigger(() => setDemoOpen(true));
+  useEffect(() => {
+    const handler = () => setDemoOpen(true);
+    window.addEventListener(OPEN_DEMO_EVENT, handler);
+    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
+  }, []);
 
   return (
     <div className="min-h-screen bg-ink text-white">
@@ -70,23 +70,6 @@ function Home() {
       <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
-}
-
-function useDemoTrigger(cb: () => void) {
-  if (typeof window === "undefined") return;
-  // Use a stable ref-less pattern via useEffect
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffectOnce(() => {
-    const handler = () => cb();
-    window.addEventListener(OPEN_DEMO_EVENT, handler);
-    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
-  });
-}
-
-function useEffectOnce(fn: () => void | (() => void)) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { useEffect } = require("react") as typeof import("react");
-  useEffect(fn, []);
 }
 
 /* ---------- Nav ---------- */

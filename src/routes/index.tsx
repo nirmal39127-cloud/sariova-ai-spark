@@ -101,12 +101,12 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
+        <button
+          onClick={openDemo}
           className="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-bold text-ink transition hover:brightness-110"
         >
-          Book demo <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-        </a>
+          Try demo <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+        </button>
       </div>
     </header>
   );
@@ -136,12 +136,12 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#services"
+            <button
+              onClick={openDemo}
               className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3.5 font-display text-[15px] font-bold text-ink transition hover:brightness-110"
             >
               Try a live demo <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-            </a>
+            </button>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3.5 font-display text-[15px] font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06]"
@@ -178,9 +178,9 @@ function Hero() {
               <Bubble side="out">
                 Yes — we have 10:30am and 2:15pm available. Want me to book one for you?
               </Bubble>
-              <Bubble side="in">2:15 works. Name is Priya.</Bubble>
+              <Bubble side="in">2:15 works. Name is Jack.</Bubble>
               <Bubble side="out">
-                Locked in for Priya at 2:15pm ✅ You'll get a text confirmation shortly.
+                Locked in for Jack at 2:15pm ✅ You'll get a text confirmation shortly.
               </Bubble>
             </div>
             <div className="flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm text-ink-soft">
@@ -247,10 +247,10 @@ function Services() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {items.map(({ icon: Icon, title, desc }) => (
-            <a
+            <button
               key={title}
-              href="#contact"
-              className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
+              onClick={openDemo}
+              className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-left transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-wash text-brand-deep">
                 <Icon className="h-6 w-6" strokeWidth={2} />

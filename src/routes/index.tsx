@@ -384,15 +384,25 @@ function Founder() {
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-5">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-ink-2 to-ink p-8 md:p-12">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Founder
-          </span>
-          <h2 className="mt-4 text-[28px] leading-tight md:text-4xl">
-            Built and supported by{" "}
-            <span className="text-brand">Nirmal Saria</span>, in Melbourne.
-          </h2>
-          <p className="mt-5 text-[15px] leading-relaxed text-white/70 md:text-base">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
+            <span
+              aria-label="Nirmal Saria"
+              className="flex h-24 w-24 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-brand-deep font-display text-3xl font-extrabold text-ink shadow-lg ring-4 ring-brand/20"
+            >
+              NS
+            </span>
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                Founder
+              </span>
+              <h2 className="mt-3 text-[26px] leading-tight md:text-4xl">
+                Built and supported by{" "}
+                <span className="text-brand">Nirmal Saria</span>, in Melbourne.
+              </h2>
+            </div>
+          </div>
+          <p className="mt-6 text-[15px] leading-relaxed text-white/70 md:text-base">
             I've spent the last few years building AI assistants for cafés,
             clinics, tradies and salons across Melbourne. Sariova.AI is the
             same practical, no-nonsense service — with the tooling and team to

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import {
   MessageSquare,
   Phone,
@@ -12,6 +13,7 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
+import { DemoModal } from "@/components/DemoModal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,7 +28,7 @@ export const Route = createFileRoute("/")({
           name: "Sariova.AI",
           url: "https://sariova.ai/",
           telephone: "+61466215363",
-          email: "hello@sariova.ai",
+          email: "nirmal39127@gmail.com",
           founder: { "@type": "Person", name: "Nirmal Saria" },
           areaServed: { "@type": "City", name: "Melbourne" },
           address: {
@@ -44,7 +46,17 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const OPEN_DEMO_EVENT = "sariova:open-demo";
+const openDemo = () => window.dispatchEvent(new Event(OPEN_DEMO_EVENT));
+
 function Home() {
+  const [demoOpen, setDemoOpen] = useState(false);
+  useEffect(() => {
+    const handler = () => setDemoOpen(true);
+    window.addEventListener(OPEN_DEMO_EVENT, handler);
+    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
+  }, []);
+
   return (
     <div className="min-h-screen bg-ink text-white">
       <Nav />
@@ -55,6 +67,7 @@ function Home() {
       <Founder />
       <CTA />
       <Footer />
+      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }
@@ -88,12 +101,12 @@ function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
+        <button
+          onClick={openDemo}
           className="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-bold text-ink transition hover:brightness-110"
         >
-          Book demo <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
-        </a>
+          Try demo <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
+        </button>
       </div>
     </header>
   );
@@ -123,12 +136,12 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#services"
+            <button
+              onClick={openDemo}
               className="inline-flex items-center gap-2 rounded-xl bg-brand px-5 py-3.5 font-display text-[15px] font-bold text-ink transition hover:brightness-110"
             >
               Try a live demo <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
-            </a>
+            </button>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-5 py-3.5 font-display text-[15px] font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06]"
@@ -165,9 +178,9 @@ function Hero() {
               <Bubble side="out">
                 Yes — we have 10:30am and 2:15pm available. Want me to book one for you?
               </Bubble>
-              <Bubble side="in">2:15 works. Name is Priya.</Bubble>
+              <Bubble side="in">2:15 works. Name is Jack.</Bubble>
               <Bubble side="out">
-                Locked in for Priya at 2:15pm ✅ You'll get a text confirmation shortly.
+                Locked in for Jack at 2:15pm ✅ You'll get a text confirmation shortly.
               </Bubble>
             </div>
             <div className="flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm text-ink-soft">
@@ -234,10 +247,10 @@ function Services() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {items.map(({ icon: Icon, title, desc }) => (
-            <a
+            <button
               key={title}
-              href="#contact"
-              className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
+              onClick={openDemo}
+              className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-left transition hover:-translate-y-1 hover:border-brand/40 hover:bg-white/[0.05]"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-wash text-brand-deep">
                 <Icon className="h-6 w-6" strokeWidth={2} />
@@ -247,7 +260,7 @@ function Services() {
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
                 See it in action <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
               </span>
-            </a>
+            </button>
           ))}
         </div>
       </div>
@@ -371,15 +384,25 @@ function Founder() {
     <section className="py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-5">
         <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-ink-2 to-ink p-8 md:p-12">
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Founder
-          </span>
-          <h2 className="mt-4 text-[28px] leading-tight md:text-4xl">
-            Built and supported by{" "}
-            <span className="text-brand">Nirmal Saria</span>, in Melbourne.
-          </h2>
-          <p className="mt-5 text-[15px] leading-relaxed text-white/70 md:text-base">
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center">
+            <span
+              aria-label="Nirmal Saria"
+              className="flex h-24 w-24 flex-none items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-brand-deep font-display text-3xl font-extrabold text-ink shadow-lg ring-4 ring-brand/20"
+            >
+              NS
+            </span>
+            <div>
+              <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
+                Founder
+              </span>
+              <h2 className="mt-3 text-[26px] leading-tight md:text-4xl">
+                Built and supported by{" "}
+                <span className="text-brand">Nirmal Saria</span>, in Melbourne.
+              </h2>
+            </div>
+          </div>
+          <p className="mt-6 text-[15px] leading-relaxed text-white/70 md:text-base">
             I've spent the last few years building AI assistants for cafés,
             clinics, tradies and salons across Melbourne. Sariova.AI is the
             same practical, no-nonsense service — with the tooling and team to
@@ -424,10 +447,10 @@ function CTA() {
             <Phone className="h-4 w-4" strokeWidth={2.5} /> Call +61 466 215 363
           </a>
           <a
-            href="mailto:hello@sariova.ai"
+            href="mailto:nirmal39127@gmail.com"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 font-display text-base font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06] sm:w-auto"
           >
-            <Mail className="h-4 w-4" strokeWidth={2.5} /> hello@sariova.ai
+            <Mail className="h-4 w-4" strokeWidth={2.5} /> nirmal39127@gmail.com
           </a>
         </div>
       </div>

@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
           name: "Sariova.AI",
           url: "https://sariova.ai/",
           telephone: "+61466215363",
-          email: "hello@sariova.ai",
+          email: "nirmal39127@gmail.com",
           founder: { "@type": "Person", name: "Nirmal Saria" },
           areaServed: { "@type": "City", name: "Melbourne" },
           address: {

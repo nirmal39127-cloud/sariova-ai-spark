@@ -260,7 +260,7 @@ function Services() {
               <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-bold text-brand">
                 See it in action <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
               </span>
-            </a>
+            </button>
           ))}
         </div>
       </div>

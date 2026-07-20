@@ -46,7 +46,17 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const OPEN_DEMO_EVENT = "sariova:open-demo";
+const openDemo = () => window.dispatchEvent(new Event(OPEN_DEMO_EVENT));
+
 function Home() {
+  const [demoOpen, setDemoOpen] = useState(false);
+  if (typeof window !== "undefined") {
+    // register once via effect below
+  }
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useDemoTrigger(() => setDemoOpen(true));
+
   return (
     <div className="min-h-screen bg-ink text-white">
       <Nav />
@@ -57,8 +67,26 @@ function Home() {
       <Founder />
       <CTA />
       <Footer />
+      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
+}
+
+function useDemoTrigger(cb: () => void) {
+  if (typeof window === "undefined") return;
+  // Use a stable ref-less pattern via useEffect
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffectOnce(() => {
+    const handler = () => cb();
+    window.addEventListener(OPEN_DEMO_EVENT, handler);
+    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
+  });
+}
+
+function useEffectOnce(fn: () => void | (() => void)) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { useEffect } = require("react") as typeof import("react");
+  useEffect(fn, []);
 }
 
 /* ---------- Nav ---------- */

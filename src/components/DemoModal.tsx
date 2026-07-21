@@ -12,12 +12,48 @@ type Industry = {
 };
 
 const INDUSTRIES: Industry[] = [
-  { key: "plumbing", emoji: "🔧", label: "Emergency Plumbing", desc: "Callouts, quotes & bookings", opener: "G'day! Emergency Plumbing Co. — what's going on at your place?" },
-  { key: "dental", emoji: "🦷", label: "Dental Clinic", desc: "Checkups, emergencies & bookings", opener: "Hi, welcome to Brighton Family Dental! How can I help you today?" },
-  { key: "cafe", emoji: "☕", label: "Café", desc: "Hours, menu & bookings", opener: "Hey! Sunday Lane Café here — chasing a booking, catering, or just a question?" },
-  { key: "salon", emoji: "💇", label: "Hair Salon", desc: "Services & appointments", opener: "Hi lovely! Bloom Hair Studio — after a cut, colour or something else?" },
-  { key: "gym", emoji: "🏋️", label: "Gym", desc: "Trials, memberships & classes", opener: "Hey! Northside Strength Gym — keen for a free 7-day trial, or got a question first?" },
-  { key: "mechanic", emoji: "🔩", label: "Mechanic", desc: "Servicing, roadworthy & repairs", opener: "G'day mate, Fair Dinkum Auto — what's the car doing?" },
+  {
+    key: "plumbing",
+    emoji: "🔧",
+    label: "Emergency Plumbing",
+    desc: "Callouts, quotes & bookings",
+    opener: "G'day! Emergency Plumbing Co. — what's going on at your place?",
+  },
+  {
+    key: "dental",
+    emoji: "🦷",
+    label: "Dental Clinic",
+    desc: "Checkups, emergencies & bookings",
+    opener: "Hi, welcome to Brighton Family Dental! How can I help you today?",
+  },
+  {
+    key: "cafe",
+    emoji: "☕",
+    label: "Café",
+    desc: "Hours, menu & bookings",
+    opener: "Hey! Sunday Lane Café here — chasing a booking, catering, or just a question?",
+  },
+  {
+    key: "salon",
+    emoji: "💇",
+    label: "Hair Salon",
+    desc: "Services & appointments",
+    opener: "Hi lovely! Bloom Hair Studio — after a cut, colour or something else?",
+  },
+  {
+    key: "gym",
+    emoji: "🏋️",
+    label: "Gym",
+    desc: "Trials, memberships & classes",
+    opener: "Hey! Northside Strength Gym — keen for a free 7-day trial, or got a question first?",
+  },
+  {
+    key: "mechanic",
+    emoji: "🔩",
+    label: "Mechanic",
+    desc: "Servicing, roadworthy & repairs",
+    opener: "G'day mate, Fair Dinkum Auto — what's the car doing?",
+  },
 ];
 
 export function DemoModal({ open, onClose }: { open: boolean; onClose: () => void }) {
@@ -64,11 +100,13 @@ function IndustryPicker({ onPick }: { onPick: (i: Industry) => void }) {
           <span className="h-1.5 w-1.5 rounded-full bg-brand" /> Live demo
         </span>
         <h3 className="mt-3 font-display text-2xl font-extrabold text-white">
-          Pick a business.<br />
+          Pick a business.
+          <br />
           <span className="text-brand">Chat with its AI assistant.</span>
         </h3>
         <p className="mt-2 text-sm text-white/60">
-          These are real, working assistants. Yours will be built the same way — trained on your business.
+          These are real, working assistants. Yours will be built the same way — trained on your
+          business.
         </p>
       </div>
       <div className="grid gap-2 px-4 pb-6">
@@ -85,7 +123,10 @@ function IndustryPicker({ onPick }: { onPick: (i: Industry) => void }) {
               <div className="font-display text-sm font-extrabold text-white">{i.label}</div>
               <div className="text-xs text-white/55">{i.desc}</div>
             </div>
-            <ArrowRight className="h-4 w-4 text-brand opacity-0 transition group-hover:opacity-100" strokeWidth={2.5} />
+            <ArrowRight
+              className="h-4 w-4 text-brand opacity-0 transition group-hover:opacity-100"
+              strokeWidth={2.5}
+            />
           </button>
         ))}
       </div>

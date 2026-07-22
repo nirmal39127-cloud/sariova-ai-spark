@@ -49,7 +49,7 @@ export const Route = createFileRoute("/api/chat")({
 
         const google = createGoogleAiProvider(key);
         const result = streamText({
-          model: google("gemini-2.5-flash"),
+          model: google("gemini-3.6-flash"),
           system: `${config.systemPrompt}\n\nRules: Keep replies under 45 words. Never invent prices not listed. If asked something outside scope, offer to pass on to the human owner. End every reply that isn't a question with a subtle nudge toward booking.`,
           messages: await convertToModelMessages(messages as UIMessage[]),
         });

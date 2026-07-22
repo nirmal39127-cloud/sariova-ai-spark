@@ -1,12 +1,20 @@
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 
-export function createLovableAiGatewayProvider(lovableApiKey: string) {
+/**
+ * Google Gemini via its OpenAI-compatible endpoint.
+ *
+ * Replaces the Lovable AI Gateway, which only works while the app is
+ * hosted on Lovable. This app is self-hosted on Cloudflare Workers,
+ * so it calls Google directly with our own API key.
+ *
+ * Key comes from https://aistudio.google.com  (starts with "AIza...")
+ */
+export function createGoogleAiProvider(googleApiKey: string) {
   return createOpenAICompatible({
-    name: "lovable",
-    baseURL: "https://ai.gateway.lovable.dev/v1",
+    name: "google",
+    baseURL: "https://generativelanguage.googleapis.com/v1beta/openai",
     headers: {
-      "Lovable-API-Key": lovableApiKey,
-      "X-Lovable-AIG-SDK": "vercel-ai-sdk",
+      Authorization: `Bearer ${googleApiKey}`,
     },
   });
 }

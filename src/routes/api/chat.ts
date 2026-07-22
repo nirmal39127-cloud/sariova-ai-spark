@@ -1,4 +1,4 @@
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { createGoogleAiProvider } from "@/lib/ai-gateway.server";
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
 
@@ -39,15 +39,17 @@ export const Route = createFileRoute("/api/chat")({
         if (!Array.isArray(messages)) {
           return new Response("Messages are required", { status: 400 });
         }
-        const key = process.env.LOVABLE_API_KEY;
-        if (!key) return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+        const key = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+        if (!key) {
+          return new Response("Missing GOOGLE_GENERATIVE_AI_API_KEY", { status: 500 });
+        }
 
         const industryKey = typeof industry === "string" ? industry : "plumbing";
         const config = INDUSTRIES[industryKey] ?? INDUSTRIES.plumbing;
 
-        const gateway = createLovableAiGatewayProvider(key);
+        const google = createGoogleAiProvider(key);
         const result = streamText({
-          model: gateway("google/gemini-2.5-flash"),
+          model: google("gemini-2.5-flash"),
           system: `${config.systemPrompt}\n\nRules: Keep replies under 45 words. Never invent prices not listed. If asked something outside scope, offer to pass on to the human owner. End every reply that isn't a question with a subtle nudge toward booking.`,
           messages: await convertToModelMessages(messages as UIMessage[]),
         });

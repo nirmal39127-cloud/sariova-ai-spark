@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
           name: "Sariova AI",
           url: "https://sariova.com.au/",
           telephone: "+61466215363",
-          email: "info@sariova.com.au",
+          email: "contact@sariova.com.au",
           founder: { "@type": "Person", name: "Nirmal Saria" },
           areaServed: { "@type": "City", name: "Melbourne" },
           address: {
@@ -406,10 +406,10 @@ function CTA() {
             <Phone className="h-4 w-4" strokeWidth={2.5} /> Call +61 466 215 363
           </a>
           <a
-            href="mailto:info@sariova.com.au"
+            href="mailto:contact@sariova.com.au"
             className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 font-display text-base font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06] sm:w-auto"
           >
-            <Mail className="h-4 w-4" strokeWidth={2.5} /> info@sariova.com.au
+            <Mail className="h-4 w-4" strokeWidth={2.5} /> contact@sariova.com.au
           </a>
         </div>
       </div>

@@ -58,10 +58,10 @@ export function ContactRow() {
         <Phone className="h-4 w-4" strokeWidth={2.5} /> Call · 0466 215 363
       </a>
       <a
-        href="mailto:info@sariova.com.au?subject=AI%20assistant%20for%20my%20business"
+        href="mailto:contact@sariova.com.au?subject=AI%20assistant%20for%20my%20business"
         className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-6 py-4 font-display text-base font-bold text-white transition hover:border-white/30 hover:bg-white/[0.06] sm:w-auto"
       >
-        <Mail className="h-4 w-4" strokeWidth={2.5} /> info@sariova.com.au
+        <Mail className="h-4 w-4" strokeWidth={2.5} /> contact@sariova.com.au
       </a>
     </div>
   );

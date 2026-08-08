@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import {
   MessageSquare,
   Phone,
@@ -13,14 +12,12 @@ import {
   Clock,
   MapPin,
 } from "lucide-react";
-import { DemoModal } from "@/components/DemoModal";
 import {
   Nav,
   Footer,
   SectionHead,
   FounderPhoto,
   openDemo,
-  OPEN_DEMO_EVENT,
 } from "@/components/SiteChrome";
 
 export const Route = createFileRoute("/")({
@@ -55,13 +52,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const [demoOpen, setDemoOpen] = useState(false);
-  useEffect(() => {
-    const handler = () => setDemoOpen(true);
-    window.addEventListener(OPEN_DEMO_EVENT, handler);
-    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
-  }, []);
-
   return (
     <div className="min-h-screen bg-ink text-white">
       <Nav />
@@ -72,7 +62,6 @@ function Home() {
       <Founder />
       <CTA />
       <Footer />
-      <DemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }

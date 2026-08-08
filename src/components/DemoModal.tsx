@@ -1,7 +1,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, X, Sparkles } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 
 type Industry = {
   key: string;
@@ -175,9 +175,11 @@ function ChatView({ industry, onBack }: { industry: Industry; onBack: () => void
           ← Back
         </button>
         <div className="flex flex-1 items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-ink">
-            <Sparkles className="h-4 w-4" strokeWidth={2.5} />
-          </span>
+          <img
+            src="/brand/sariova-mark-192.png"
+            alt="Sariova AI"
+            className="h-8 w-8 rounded-lg object-cover"
+          />
           <div className="leading-tight">
             <div className="font-display text-sm font-extrabold text-white">{industry.label}</div>
             <div className="text-[11px] text-brand">● AI assistant online</div>

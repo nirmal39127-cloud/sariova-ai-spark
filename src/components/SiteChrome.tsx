@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Phone, Mail } from "lucide-react";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { DemoModal } from "@/components/DemoModal";
 
 export const OPEN_DEMO_EVENT = "sariova:open-demo";
 export const openDemo = () => window.dispatchEvent(new Event(OPEN_DEMO_EVENT));
@@ -15,8 +16,9 @@ const NAV = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <>
+      <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/80 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Sariova AI home">
           <img
             src="/brand/sariova-logo-dark.webp"
@@ -42,9 +44,23 @@ export function Nav() {
         >
           Try demo <ArrowRight className="h-3.5 w-3.5" strokeWidth={2.5} />
         </button>
-      </div>
-    </header>
+        </div>
+      </header>
+      <DemoHost />
+    </>
   );
+}
+
+function DemoHost() {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener(OPEN_DEMO_EVENT, handler);
+    return () => window.removeEventListener(OPEN_DEMO_EVENT, handler);
+  }, []);
+
+  return <DemoModal open={open} onClose={() => setOpen(false)} />;
 }
 
 export function ContactRow() {

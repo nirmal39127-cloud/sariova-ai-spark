@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Sparkles, ArrowRight, Phone, Mail } from "lucide-react";
+import { ArrowRight, Phone, Mail } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const OPEN_DEMO_EVENT = "sariova:open-demo";
@@ -17,13 +17,12 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-ink/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link to="/" className="flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-ink">
-            <Sparkles className="h-5 w-5" strokeWidth={2.5} />
-          </span>
-          <span className="font-display text-[15px] font-extrabold tracking-tight">
-            Sariova <span className="text-brand">AI</span>
-          </span>
+        <Link to="/" className="flex shrink-0 items-center" aria-label="Sariova AI home">
+          <img
+            src="/brand/sariova-logo-dark.webp"
+            alt="Sariova AI"
+            className="h-9 w-auto object-contain sm:h-10"
+          />
         </Link>
         <nav className="hidden items-center gap-1 md:flex">
           {NAV.map(([label, href]) => (
@@ -71,14 +70,11 @@ export function Footer() {
   return (
     <footer className="border-t border-white/5 bg-ink py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5 text-center md:flex-row md:justify-between md:text-left">
-        <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-ink">
-            <Sparkles className="h-4 w-4" strokeWidth={2.5} />
-          </span>
-          <span className="font-display text-sm font-extrabold">
-            Sariova <span className="text-brand">AI</span>
-          </span>
-        </div>
+        <img
+          src="/brand/sariova-logo-dark.webp"
+          alt="Sariova AI"
+          className="h-9 w-auto object-contain"
+        />
         <p className="text-xs text-white/50">
           © {new Date().getFullYear()} Sariova AI · AI Assistants for Local Business · Melbourne,
           Australia

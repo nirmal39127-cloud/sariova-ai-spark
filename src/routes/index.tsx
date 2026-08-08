@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import {
   MessageSquare,
   Phone,
-  Instagram,
+  CalendarDays,
+  BellRing,
   Zap,
   ShieldCheck,
-  Sparkles,
   ArrowRight,
   Mail,
   Check,
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/")({
             addressCountry: "AU",
           },
           description:
-            "AI web assistants, phone receptionists and social DM assistants for local businesses.",
+            "Website assistants, booking and trial-request flows, lead notifications and missed-call follow-up for local businesses.",
         }),
       },
     ],
@@ -97,8 +97,8 @@ function Hero() {
             Where AI Meets Business Growth
           </p>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
-            Sariova AI builds assistants that answer every web chat, phone call and social DM for
-            your business — 24 hours a day, 7 days a week. Like a staff member who never sleeps.
+            Sariova AI builds website assistants that guide visitors, capture complete enquiries
+            and deliver the details to your team — 24 hours a day, 7 days a week.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -117,9 +117,9 @@ function Hero() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand/80">
-            <span>✓ Answers in seconds</span>
-            <span>✓ Books appointments</span>
-            <span>✓ Trained on your business</span>
+            <span>✓ Answers common questions</span>
+            <span>✓ Captures complete enquiries</span>
+            <span>✓ Delivers leads by email or SMS</span>
           </div>
         </div>
 
@@ -128,9 +128,11 @@ function Hero() {
           <div className="mx-auto max-w-[380px] rounded-3xl bg-screen p-3 glow-ring">
             <div className="rounded-2xl bg-ink px-4 py-3">
               <div className="flex items-center gap-2.5">
-                <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-ink">
-                  <Sparkles className="h-4 w-4" strokeWidth={2.5} />
-                </span>
+                <img
+                  src="/brand/sariova-mark-192.png"
+                  alt="Sariova AI"
+                  className="h-8 w-8 rounded-lg object-cover"
+                />
                 <div className="leading-tight">
                   <div className="font-display text-sm font-extrabold text-white">
                     Sariova Assistant
@@ -140,13 +142,14 @@ function Hero() {
               </div>
             </div>
             <div className="space-y-2.5 px-2 py-4">
-              <Bubble side="in">Hi! Do you have any spots free tomorrow?</Bubble>
+              <Bubble side="in">Hi! I would like to book a trial class.</Bubble>
               <Bubble side="out">
-                Yes — we have 10:30am and 2:15pm available. Want me to book one for you?
+                I can help with that. Which age group is the trial for?
               </Bubble>
-              <Bubble side="in">2:15 works. Name is Jack.</Bubble>
+              <Bubble side="in">7–10 years. Name is Jack.</Bubble>
               <Bubble side="out">
-                Locked in for Jack at 2:15pm ✅ You'll get a text confirmation shortly.
+                Thanks, Jack. We have your details and the team will confirm the next available
+                trial time shortly.
               </Bubble>
             </div>
             <div className="flex items-center gap-2 rounded-2xl bg-white px-4 py-3 text-sm text-ink-soft">
@@ -184,18 +187,18 @@ function Services() {
   const items = [
     {
       icon: MessageSquare,
-      title: "Web Chat Assistant",
-      desc: "A friendly chat bubble on your website that answers questions, quotes prices and captures leads while you sleep.",
+      title: "Website Lead Assistant",
+      desc: "A branded website assistant that answers common questions and captures every enquiry while you are busy or closed.",
     },
     {
-      icon: Phone,
-      title: "AI Phone Receptionist",
-      desc: "Picks up every call in your business voice, books appointments and texts you the details instantly.",
+      icon: CalendarDays,
+      title: "Trials, Bookings & Calendars",
+      desc: "Guide customers to the right service or class, capture their preferred time and connect to an approved booking or calendar workflow.",
     },
     {
-      icon: Instagram,
-      title: "Social DM Assistant",
-      desc: "Answers Instagram, Facebook and WhatsApp messages the moment they land — no more lost leads at midnight.",
+      icon: BellRing,
+      title: "Lead Delivery & Follow-up",
+      desc: "Send completed leads to email, SMS and Google Sheets, with missed-call follow-up available for compatible business mobiles.",
     },
   ];
 
@@ -206,7 +209,7 @@ function Services() {
           eyebrow="What we build"
           title={
             <>
-              One assistant. <span className="text-brand">Every channel your customers use.</span>
+              One assistant. <span className="text-brand">A clearer path from enquiry to action.</span>
             </>
           }
         />
@@ -239,17 +242,17 @@ function HowItWorks() {
     {
       n: "01",
       title: "Discovery call",
-      desc: "We spend 20 minutes learning your business — your services, prices, tone and the questions customers always ask.",
+      desc: "We learn your services, customer questions, lead process and any booking or notification requirements.",
     },
     {
       n: "02",
-      title: "We build & train",
-      desc: "Within 5–7 days we deliver an assistant trained on your business, wired into your website, phone or DMs.",
+      title: "We build & test",
+      desc: "We configure your assistant, enquiry flow and agreed lead delivery, then give you a working version to test.",
     },
     {
       n: "03",
-      title: "Go live & improve",
-      desc: "You approve. It goes live. We monitor conversations weekly and keep sharpening it — you keep getting bookings.",
+      title: "Go live & support",
+      desc: "You approve the final flow, we deploy it, and we keep the assistant current as your business changes.",
     },
   ];
 
@@ -284,12 +287,12 @@ function WhyUs() {
     {
       icon: Zap,
       title: "Answers in seconds",
-      desc: "80% of customers pick the first business that replies. Sariova AI is always first.",
+      desc: "A clear, prompt reply helps a customer take the next step while their enquiry is still fresh.",
     },
     {
       icon: Clock,
-      title: "24/7, no sick days",
-      desc: "Weekends, holidays, 3am — every enquiry gets a warm, on-brand reply.",
+      title: "Available when you are not",
+      desc: "After hours, weekends and during busy periods, your website still gives visitors a useful next step.",
     },
     {
       icon: ShieldCheck,
@@ -299,7 +302,7 @@ function WhyUs() {
     {
       icon: Check,
       title: "You stay in control",
-      desc: "Every booking, quote and lead lands in your inbox or CRM instantly.",
+      desc: "Completed leads can be delivered by email, SMS and Google Sheets, based on your agreed workflow.",
     },
   ];
   return (

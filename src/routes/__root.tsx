@@ -93,16 +93,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "AI assistants that answer every customer message 24/7 — built, deployed and supported for local businesses.",
       },
       { property: "og:type", content: "website" },
+      {
+        property: "og:image",
+        content: "https://sariova.com.au/brand/sariova-social-card.jpg",
+      },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Sariova AI" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Sariova AI — AI Assistants for Local Business" },
       {
         name: "twitter:description",
         content: "AI receptionists that answer every customer 24/7 for local businesses.",
       },
+      {
+        name: "twitter:image",
+        content: "https://sariova.com.au/brand/sariova-social-card.jpg",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/brand/sariova-mark-32.png", type: "image/png", sizes: "32x32" },
+      {
+        rel: "icon",
+        href: "/brand/sariova-mark-192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      { rel: "apple-touch-icon", href: "/brand/sariova-mark-192.png", sizes: "192x192" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

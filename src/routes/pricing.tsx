@@ -9,7 +9,7 @@ export const Route = createFileRoute("/pricing")({
       {
         name: "description",
         content:
-          "Transparent pricing for AI web assistants and phone receptionists. Free working demo before you pay anything.",
+          "Clear starting pricing for Sariova website lead assistants, with custom quotes for booking, calendar and missed-call integrations.",
       },
       { property: "og:title", content: "Pricing — Sariova AI" },
     ],
@@ -20,36 +20,36 @@ export const Route = createFileRoute("/pricing")({
 const plans = [
   {
     tag: "Where most people start",
-    title: "Web assistant",
-    price: "From $299 setup + $99 /month",
+    title: "Website Lead Assistant",
+    price: "From $750 setup + $199 /month",
     points: [
       "Assistant trained on your business, live on your website",
-      "Leads sent to you by email, SMS or WhatsApp",
-      "Answers 24/7, including weekends and holidays",
+      "Leads delivered to you by email and SMS",
+      "Answers common questions and captures complete enquiries 24/7",
       "We keep it updated as your business changes",
     ],
     featured: true,
   },
   {
-    tag: "For phone-heavy businesses",
-    title: "Phone receptionist",
-    price: "Varies by solution",
+    tag: "For classes, appointments and availability",
+    title: "Booking & calendar integration",
+    price: "Quoted per integration",
     points: [
-      "Priced on your call volume and what it plugs into — quoted after your free demo",
-      "Everything in the web assistant",
-      "An AI receptionist that answers your calls",
-      "Takes bookings and messages instead of voicemail",
+      "Adds an agreed booking or availability workflow to your assistant",
+      "Google Calendar, Outlook Calendar or Square options",
+      "Final scope depends on the platform, access and confirmation rules",
+      "Quoted after a short workflow review",
     ],
     featured: false,
   },
   {
-    tag: "Everything else",
-    title: "Custom",
+    tag: "When your workflow needs more",
+    title: "Custom workflow",
     price: "Let's talk",
     points: [
-      "Social and WhatsApp assistants",
-      "Landing pages, flyers, video ads, ad campaigns",
-      "Anything that doesn't fit a box above",
+      "Google Sheets lead capture and tailored notifications",
+      "Missed-call SMS follow-up, subject to phone-provider compatibility",
+      "Conversion websites, landing pages and client-specific integrations",
     ],
     featured: false,
   },
@@ -58,7 +58,7 @@ const plans = [
 const faqs = [
   {
     q: "Why does the price vary?",
-    a: "A one-page cafe and a multi-site clinic aren't the same job. The number moves with how much your business needs it to know and what it has to plug into.",
+    a: "The Website Lead Assistant has a clear starting price. The quote changes only when you need extra workflows, such as calendar booking, Square, Google Sheets or missed-call follow-up.",
   },
   {
     q: "Is the demo really free?",
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "What's the monthly for?",
-    a: "Keeping it running, keeping it accurate, and changing it when your prices, hours or services change. An assistant giving out last year's prices is worse than no assistant.",
+    a: "It covers ongoing hosting, platform monitoring, maintenance and reasonable updates when your services, hours or business details change.",
   },
   {
     q: "Am I locked in?",
@@ -82,14 +82,14 @@ function Pricing() {
         <div className="absolute -right-24 -top-32 h-[420px] w-[420px] rounded-full hero-orb" />
         <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-14 md:pt-20">
           <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" /> No quotes, no discovery calls
+            <span className="h-1.5 w-1.5 rounded-full bg-brand" /> Clear starting price
           </span>
           <h1 className="mt-5 max-w-3xl text-[40px] leading-[1.03] md:text-[60px]">
-            No quotes. No <span className="text-brand">discovery call.</span>
+            Clear starting price. <span className="text-brand">Tailored when needed.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            Here's where it starts. The exact number comes after a free demo you've already tried
-            and liked — not before.
+            Start with a practical website assistant. If you need calendar booking, Square,
+            missed-call recovery or a custom workflow, we scope that clearly before we build it.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ function Pricing() {
             eyebrow="Pricing"
             title={
               <>
-                Free working demo first — <span className="text-brand">always.</span>
+                Start simple. <span className="text-brand">Add what your business needs.</span>
               </>
             }
           />
@@ -129,8 +129,8 @@ function Pricing() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-white/50">
-            Every price varies based on what your business actually needs. You get an exact number
-            after your free demo — never before.
+            The Website Lead Assistant has a clear starting price. Integrations and custom
+            workflows are quoted only after we understand the systems involved.
           </p>
         </div>
       </section>
@@ -152,11 +152,11 @@ function Pricing() {
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-3xl px-5 text-center">
           <h2 className="text-[32px] leading-[1.05] md:text-5xl">
-            Try it before you spend a <span className="text-brand">cent.</span>
+            Start with an assistant that <span className="text-brand">fits your business.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-white/70 md:text-lg">
-            We'll build you a free working demo trained on your business. You'll know if it's worth
-            $99 a month before we ever send you an invoice.
+            We can show you how a Sariova assistant would fit your business, then agree the right
+            setup before we begin.
           </p>
           <ContactRow />
           <button

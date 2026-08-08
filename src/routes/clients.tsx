@@ -9,7 +9,7 @@ export const Route = createFileRoute("/clients")({
       {
         name: "description",
         content:
-          "Real AI assistants delivered for Australian businesses — accounting, wellness, hospitality and finance.",
+          "Live and in-progress AI assistant solutions for Australian businesses, including accounting and martial arts.",
       },
       { property: "og:title", content: "Our Clients — Sariova AI" },
     ],
@@ -21,45 +21,28 @@ const delivered = [
   {
     sector: "Accounting",
     title: "A Melbourne accounting firm",
-    desc: "The full job — an AI assistant on their website capturing client enquiries, plus everything around it to get people there.",
+    desc: "A responsive website assistant that guides accounting enquiries, validates customer details and sends completed leads to the business.",
     points: [
-      "Lead-capture assistant, live on their site",
-      "Demo page and landing page",
-      "Flyers and print",
-      "Video ad and Facebook ad campaign",
+      "Website assistant live in production",
+      "Structured enquiry capture across six service categories",
+      "Customer consent and input validation",
+      "Email and SMS lead notifications",
+      "Mobile and desktop support",
     ],
-    status: "Assistant live today",
-  },
-  {
-    sector: "Health & wellness",
-    title: "A day spa",
-    desc: "An after-hours assistant that answers treatment questions and captures bookings when the phone can't be answered — which for a spa is most of the day.",
-    points: [
-      "After-hours assistant with lead capture",
-      "Enquiries delivered straight to their inbox",
-      "Rebuilt their lead email delivery when it broke",
-    ],
-    status: "Assistant live today",
-  },
-  {
-    sector: "Professional services",
-    title: "A Melbourne business",
-    desc: "Built and deployed their assistant end to end — and turned up in person when they needed a hand with the rest of their tech.",
-    points: ["Assistant built and deployed", "On-site support"],
-    status: "Delivered",
+    status: "Live in production",
   },
 ];
 
 const inBuild = [
   {
-    sector: "Hospitality",
-    title: "A motel",
-    desc: "An after-hours AI phone receptionist and web assistant — so a 10pm booking call gets answered instead of going to voicemail.",
+    sector: "Martial arts & fitness",
+    title: "A Melbourne martial arts studio",
+    desc: "A customer enquiry and trial-booking assistant being designed to capture class preferences, notify the owner by email and SMS, write completed leads to Google Sheets and support missed-call follow-up.",
   },
   {
-    sector: "Finance",
-    title: "A finance brokerage",
-    desc: "An intake assistant that gathers what a broker needs before the first conversation, so nobody's chasing paperwork.",
+    sector: "Wellness & day spa",
+    title: "A Sunbury day spa",
+    desc: "A treatment enquiry and booking-request assistant being migrated from Voiceflow into the Sariova platform. The first rollout delivers completed leads by email, with booking-platform integration available as a later phase.",
   },
 ];
 
@@ -74,19 +57,19 @@ function Clients() {
             <span className="h-1.5 w-1.5 rounded-full bg-brand" /> Already built. Already running.
           </span>
           <h1 className="mt-5 max-w-3xl text-[40px] leading-[1.03] md:text-[60px]">
-            Real businesses. <span className="text-brand">Live assistants.</span>
+            Real businesses. <span className="text-brand">Real solutions.</span>
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 md:text-lg">
-            These are jobs we've delivered that are running today. Some clients haven't been asked
-            yet whether we can use their name, so they're not here until they say yes.
+            A clear view of what is live today and what is currently being designed and built. We
+            label every project accurately as it progresses.
           </p>
         </div>
       </section>
 
       <section className="py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5">
-          <SectionHead eyebrow="Delivered" title="Every one of these is live in a real business." />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <SectionHead eyebrow="Live solutions" title="Working in a real business today." />
+          <div className="mt-12 grid max-w-2xl gap-5">
             {delivered.map((c) => (
               <div
                 key={c.title}
@@ -116,7 +99,7 @@ function Clients() {
 
       <section className="border-t border-white/5 bg-ink-2/40 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-5">
-          <SectionHead eyebrow="In build right now" title="On the workbench." />
+          <SectionHead eyebrow="In progress" title="Solutions currently taking shape." />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {inBuild.map((c) => (
               <div key={c.title} className="rounded-3xl border border-white/10 bg-white/[0.02] p-7">
@@ -132,7 +115,7 @@ function Clients() {
             ))}
           </div>
           <p className="mt-8 text-center text-sm text-white/50">
-            Client names on request — happy to put you in touch.
+            Project status is shown accurately and updated as work progresses.
           </p>
         </div>
       </section>
